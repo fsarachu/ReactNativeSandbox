@@ -1,22 +1,17 @@
 /* @flow */
 
-import React, {Component} from "react";
-import {Text, View} from "react-native";
-import styles from "./styles";
+import React from "react";
+import {TabNavigator} from "react-navigation";
+import ProfileInfoScreen from "./info";
+import ProfilePicturesScreen from "./pictures";
 
-export default class ProfileScreen extends Component {
-    static navigationOptions = ({ navigation }) => ({
-        title: `${navigation.state.params.name}'s Profile`,
-    });
+const ProfileScreen = TabNavigator({
+    Info: {screen: ProfileInfoScreen},
+    Pictures: {screen: ProfilePicturesScreen},
+});
 
+ProfileScreen.navigationOptions = ({navigation}) => ({
+    title: `${navigation.state.params.name}'s Profile`,
+});
 
-    render() {
-        const { params } = this.props.navigation.state;
-
-        return (
-            <View style={styles.container}>
-                <Text>Hello {params.name}!</Text>
-            </View>
-        );
-    }
-}
+export default ProfileScreen;
