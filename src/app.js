@@ -8,7 +8,7 @@ export default class ReactNativeSandbox extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Greeting name="Franquito"/>
+                <Greeting/>
                 <Cherry/>
                 <CaseToggleGreeting name="Franquito"/>
             </View>

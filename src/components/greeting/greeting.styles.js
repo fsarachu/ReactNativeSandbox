@@ -5,8 +5,13 @@ export default StyleSheet.create({
         flex: 1,
         padding: 20,
         alignSelf: 'stretch',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         backgroundColor: '#92d485',
+    },
+    input: {
+        height: 30,
+        textAlign: 'center',
+        backgroundColor: 'rgba(255,255,255,.3)',
     },
     content: {
         textAlign: 'center',
