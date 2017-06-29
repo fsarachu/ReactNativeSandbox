@@ -2,7 +2,7 @@
 
 import React, {Component} from "react";
 import {Image, View} from "react-native";
-import styles from "./cherry.styles";
+import styles from "./styles";
 
 export default class cherry extends Component {
     render() {

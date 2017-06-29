@@ -2,7 +2,7 @@
 
 import React, {Component} from "react";
 import {Text, TextInput, View} from "react-native";
-import styles from "./greeting.styles";
+import styles from "./styles";
 
 export default class Greeting extends Component {
 
