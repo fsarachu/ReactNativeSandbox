@@ -5,9 +5,10 @@ import {Text, View} from "react-native";
 import styles from "./styles";
 
 export default class ProfileScreen extends Component {
-    static navigationOptions = {
-        title: 'My Profile',
-    };
+    static navigationOptions = ({ navigation }) => ({
+        title: `${navigation.state.params.name}'s Profile`,
+    });
+
 
     render() {
         const { params } = this.props.navigation.state;
