@@ -10,9 +10,11 @@ export default class ProfileScreen extends Component {
     };
 
     render() {
+        const { params } = this.props.navigation.state;
+
         return (
             <View style={styles.container}>
-                <Text>Profile Screen</Text>
+                <Text>Hello {params.name}!</Text>
             </View>
         );
     }

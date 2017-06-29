@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {Button, Text, View} from "react-native";
 import styles from "./styles";
 
 export default class Login extends Component {
@@ -10,9 +10,14 @@ export default class Login extends Component {
     };
 
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <Text>Login Screen</Text>
+                <Button
+                    title='My Profile'
+                    onPress={() => navigate('Profile', {name: 'Franco' })}
+                />
             </View>
         );
     }
