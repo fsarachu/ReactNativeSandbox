@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {StyleSheet, View} from "react-native";
-import Greeting from "./components/Greeting";
-import CaseToggleGreeting from "./components/CaseToggleGreeting";
+import Greeting from "./components/greeting/greeting";
+import CaseToggleGreeting from "./components/case-toggle-greeting/case-toggle-greeting";
 
 export default class ReactNativeSandbox extends Component {
     render() {

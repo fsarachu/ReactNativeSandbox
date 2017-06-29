@@ -25,7 +25,9 @@ export default class CaseToggleGreeting extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         padding: 20,
-        backgroundColor: 'rgba(0,0,0,.1)',
+        width: 100,
+        backgroundColor: '#ed97e7',
     },
 });
