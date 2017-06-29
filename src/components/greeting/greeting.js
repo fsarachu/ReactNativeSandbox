@@ -1,7 +1,8 @@
 /* @flow */
 
 import React, {Component} from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {Text, View} from "react-native";
+import styles from "./greeting.styles";
 
 export default class Greeting extends Component {
     render() {
@@ -12,16 +13,3 @@ export default class Greeting extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 20,
-        alignSelf: 'stretch',
-        justifyContent: 'center',
-        backgroundColor: '#92d485',
-    },
-    content: {
-        textAlign: 'center',
-    },
-});

@@ -1,14 +1,17 @@
 /* @flow */
 
 import React, {Component} from "react";
-import {Image} from "react-native";
+import {Image, View} from "react-native";
+import styles from "./cherry.styles";
 
 export default class cherry extends Component {
     render() {
         let cherry = require('./img/cherry-250x250.png');
 
         return (
-            <Image source={cherry} style={{width: 250, height: 250}}/>
+            <View style={styles.container}>
+                <Image source={cherry} style={styles.content}/>
+            </View>
         );
     }
 }

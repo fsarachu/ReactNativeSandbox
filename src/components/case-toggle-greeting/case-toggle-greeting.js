@@ -1,7 +1,8 @@
 /* @flow */
 
 import React, {Component} from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {Text, View} from "react-native";
+import styles from "./case-toggle-greeting.styles";
 
 export default class CaseToggleGreeting extends Component {
     constructor(props) {
@@ -24,16 +25,3 @@ export default class CaseToggleGreeting extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 20,
-        alignSelf: 'stretch',
-        justifyContent: 'center',
-        backgroundColor: '#ed97e7',
-    },
-    content: {
-        textAlign: 'center',
-    },
-});
