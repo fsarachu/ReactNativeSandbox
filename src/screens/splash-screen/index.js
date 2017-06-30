@@ -2,12 +2,30 @@
 
 import React, {Component} from "react";
 import {View} from "react-native";
+import {NavigationActions} from "react-navigation";
 import Cherry from "../../components/cherry";
 import styles from "./styles";
 
 export default class SplashScreen extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {authStatus: null};
+    }
+
     componentDidMount() {
+        // setTimeout(() => this.props.navigation.navigate('Login'), 2000);
+        setTimeout(() => this.reset('Login'), 2000);
+    }
+
+    reset(route) {
+        let resetAction = NavigationActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({routeName: route})
+            ]
+        });
+        this.props.navigation.dispatch(resetAction);
     }
 
     render() {
