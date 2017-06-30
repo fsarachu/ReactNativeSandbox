@@ -5,7 +5,7 @@ import ProfileScreen from "./screens/profile";
 
 const App = StackNavigator(
     {
-        Home: {screen: LoginScreen},
+        Login: {screen: LoginScreen},
         Profile: {screen: ProfileScreen},
     },
     {

@@ -6,9 +6,9 @@ import {RectangleButton} from 'react-native-button-component';
 import Cherry from "../../components/cherry";
 import styles from "./styles";
 
-export default class Login extends Component {
+export default class LoginScreen extends Component {
     static navigationOptions = {
-        title: 'Welcome!',
+        title: 'Login',
     };
 
     render() {
