@@ -11,6 +11,14 @@ class UserService {
         return getUserJSON.then((json) => json ? JSON.parse(json) : null);
     }
 
+    login(name) {
+        return this.setUser({name});
+    }
+
+    logout() {
+        return AsyncStorage.removeItem('user');
+    }
+
 }
 
 export default new UserService();
