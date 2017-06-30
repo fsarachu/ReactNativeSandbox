@@ -1,7 +1,8 @@
 /* @flow */
 
 import React, {Component} from "react";
-import {Button, Text, View} from "react-native";
+import {Button, Text, TextInput, View} from "react-native";
+import Cherry from "../../components/cherry";
 import styles from "./styles";
 
 export default class Login extends Component {
@@ -10,13 +11,17 @@ export default class Login extends Component {
     };
 
     render() {
-        const { navigate } = this.props.navigation;
+        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text>Login Screen</Text>
+                <Cherry/>
+                <Text style={styles.title}>Enter Event Code</Text>
+                <TextInput
+                    placeholder="DEMO"
+                    style={styles.input}/>
                 <Button
                     title='My Profile'
-                    onPress={() => navigate('Profile', {name: 'Franco' })}
+                    onPress={() => navigate('Profile', {name: 'Franco'})}
                 />
             </View>
         );
