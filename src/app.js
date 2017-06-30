@@ -10,6 +10,7 @@ const App = StackNavigator(
     },
     {
         headerMode: 'none',
-    });
+    }
+);
 
 export default App;
