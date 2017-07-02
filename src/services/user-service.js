@@ -10,8 +10,9 @@ class UserService {
     }
 
     get() {
-        let getUserJSON = AsyncStorage.getItem(STORAGE_KEY);
-        return getUserJSON.then((json) => json ? JSON.parse(json) : null);
+        return AsyncStorage
+            .getItem(STORAGE_KEY)
+            .then((data) => data ? JSON.parse(data) : null);
     }
 
     login(name) {
