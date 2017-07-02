@@ -17,6 +17,7 @@ export default StyleSheet.create({
         height: 8 * 5,
         marginVertical: 16,
         paddingHorizontal: 8,
+        alignSelf: 'stretch',
         backgroundColor: '#f1f1f1',
         color: '#7E7E84',
         fontSize: 18,
