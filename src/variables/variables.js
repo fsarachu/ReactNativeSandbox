@@ -1,1 +1,1 @@
-export const ASYNC_STORAGE_KEY = '@ReactNativeSandboxStore';
+export const APP_ASYNC_STORAGE_KEY = '@ReactNativeSandboxStore';
