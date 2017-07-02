@@ -4,7 +4,7 @@ import SplashScreen from "./screens/splash-screen";
 import LoginScreen from "./screens/login-screen";
 import ProfileScreen from "./screens/profile-screen";
 
-const App = StackNavigator(
+const AppNavigator = StackNavigator(
     {
         Splash: {screen: SplashScreen},
         Login: {screen: LoginScreen},
@@ -12,8 +12,16 @@ const App = StackNavigator(
     },
     {
         initialRouteName: 'Splash',
-        headerMode: 'none',
+        // headerMode: 'none',
     }
 );
+
+class App extends React.Component {
+    render() {
+        return (
+            <AppNavigator/>
+        );
+    }
+}
 
 export default App;
