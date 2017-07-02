@@ -5,17 +5,17 @@ const STORAGE_KEY = `${APP_ASYNC_STORAGE_KEY}:user`;
 
 class UserService {
 
-    setUser(user) {
+    save(user) {
         return AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(user));
     }
 
-    getUser() {
+    get() {
         let getUserJSON = AsyncStorage.getItem(STORAGE_KEY);
         return getUserJSON.then((json) => json ? JSON.parse(json) : null);
     }
 
     login(name) {
-        return this.setUser({name});
+        return this.save({name});
     }
 
     logout() {
