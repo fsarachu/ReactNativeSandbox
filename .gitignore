@@ -51,3 +51,7 @@ buck-out/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
+
+# A lot of  bad stuff going on with npm@5, so better ignore this little file by the time being
+
+package-lock.json
