@@ -15,10 +15,10 @@ export default class SplashScreen extends Component {
 
     componentDidMount() {
         // setTimeout(() => this.props.navigation.navigate('Login'), 2000);
-        setTimeout(() => this.reset('Login'), 2000);
+        setTimeout(() => this.resetNavigator('Login'), 2000);
     }
 
-    reset(route) {
+    resetNavigator(route) {
         let resetAction = NavigationActions.reset({
             index: 0,
             actions: [
