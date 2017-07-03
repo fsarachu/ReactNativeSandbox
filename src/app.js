@@ -1,10 +1,10 @@
 import React from "react";
-import AppNavigator from "./components/app-navigator";
+import Counter from "./components/counter";
 
 class App extends React.Component {
     render() {
         return (
-            <AppNavigator/>
+            <Counter/>
         );
     }
 }
