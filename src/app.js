@@ -1,10 +1,14 @@
 import React from "react";
-import Counter from "./components/counter";
+import {Provider} from 'react-redux';
+import store from './store/store';
+import CounterContainer from "./containers/CounterContainer";
 
 class App extends React.Component {
     render() {
         return (
-            <Counter/>
+            <Provider store={store}>
+                <CounterContainer/>
+            </Provider>
         );
     }
 }
