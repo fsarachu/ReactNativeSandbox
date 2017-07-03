@@ -1,4 +1,5 @@
 import {StyleSheet} from "react-native";
+import {COLOR_TEXT_PRIMARY_LIGHT, COLOR_TEXT_SECONDARY_LIGHT, UNIT} from "../../variables/style";
 
 export default StyleSheet.create({
     container: {
@@ -7,11 +8,13 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#528de1',
     },
-    content: {
-        fontSize: 24,
-        color: 'rgba(255,255,255,.7)',
+    counterDisplay: {
+        fontSize: UNIT * 8,
+        color: COLOR_TEXT_PRIMARY_LIGHT,
     },
-    button: {
-
+    text: {
+        fontSize: UNIT * 2,
+        color: COLOR_TEXT_SECONDARY_LIGHT,
     },
+    button: {},
 });
