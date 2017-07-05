@@ -2,10 +2,10 @@
 
 import React from "react";
 import {TabNavigator} from "react-navigation";
-import ProfileInfoScreen from "./info";
+import ProfileLocalScreen from "./local";
 
 const ProfileScreen = TabNavigator({
-    Info: {screen: ProfileInfoScreen},
+    Local: {screen: ProfileLocalScreen},
 });
 
 ProfileScreen.navigationOptions = ({navigation}) => ({
