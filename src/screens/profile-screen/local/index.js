@@ -6,13 +6,19 @@ import {Text, View} from "react-native";
 import styles from "./styles";
 
 export default class ProfileLocalScreen extends Component {
-    render() {
-        const userData = this.props.screenProps.user.local;
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            localProfile: this.props.screenProps.user.local,
+        };
+    }
+
+    render() {
         return (
             <View style={styles.container}>
                 <Text>Local profile</Text>
-                <JSONTree data={userData}/>
+                <JSONTree data={this.state.localProfile}/>
             </View>
         );
     }
