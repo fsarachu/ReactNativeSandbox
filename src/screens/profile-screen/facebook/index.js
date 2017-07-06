@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, {Component} from "react";
-import {LoginButton} from "react-native-fbsdk";
+import {AccessToken, GraphRequest, GraphRequestManager, LoginButton} from "react-native-fbsdk";
 import JSONTree from "react-native-json-tree";
 import {Alert, Text, View} from "react-native";
 import styles from "./styles";
@@ -23,7 +23,7 @@ export default class ProfileFacebookScreen extends Component {
     onLogout() {
         UserService.get()
             .then((user) => {
-                user.facebook = null;
+                user.facebook.token = null;
                 return UserService.save(user);
             })
             .then((user) => {
@@ -38,16 +38,32 @@ export default class ProfileFacebookScreen extends Component {
         } else if (result.isCancelled) {
             Alert.alert("Login was cancelled");
         } else {
-            UserService.get()
-                .then((user) => {
-                    user.facebook = result;
-                    return UserService.save(user);
-                })
-                .then((user) => {
-                    this.setState((prev) => ({user}));
-                })
+            this.getAccessToken()
+                .then(this.storeAccessToken.bind(this))
                 .catch((e) => Alert.alert(e));
         }
+    }
+
+    getAccessToken() {
+        return AccessToken.getCurrentAccessToken()
+            .then((data) => data.accessToken);
+    }
+
+    storeAccessToken(accessToken) {
+        return UserService.get()
+            .then((user) => {
+                user.facebook.token = accessToken;
+                return UserService.save(user);
+            })
+            .then((user) => {
+                return new Promise((resolve) => {
+                    this.setState(
+                        (prev) => ({user}),
+                        () => resolve()
+                    );
+                });
+            })
+            .catch((e) => Alert.alert(e));
     }
 
     render() {
