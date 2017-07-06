@@ -40,6 +40,8 @@ export default class ProfileFacebookScreen extends Component {
         } else {
             this.getAccessToken()
                 .then(this.storeAccessToken.bind(this))
+                .then(this.getUserData.bind(this))
+                .then(this.storeUserData.bind(this))
                 .catch((e) => Alert.alert(e));
         }
     }
@@ -64,6 +66,46 @@ export default class ProfileFacebookScreen extends Component {
                 });
             })
             .catch((e) => Alert.alert(e));
+    }
+
+    getUserData() {
+        return new Promise((resolve, reject) => {
+
+            const responseInfoCallback = (error, result) => {
+                if (error) {
+                    reject(`Error fetching user data: ${error}`);
+                } else {
+                    resolve(result);
+                }
+            };
+
+            const infoRequest = new GraphRequest(
+                '/me',
+                {
+                    accessToken: this.state.user.facebook.token,
+                    parameters: {
+                        fields: {
+                            string: 'email,name,first_name,middle_name,last_name,picture'
+                        }
+                    }
+                },
+                responseInfoCallback
+            );
+
+            // Start the graph request.
+            new GraphRequestManager().addRequest(infoRequest).start();
+        });
+    }
+
+    storeUserData(info) {
+        return UserService.get()
+            .then((user) => {
+                user.facebook.data = info;
+                return UserService.save(user);
+            })
+            .then((user) => {
+                this.setState((prev) => ({user}));
+            });
     }
 
     render() {
