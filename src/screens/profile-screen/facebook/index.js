@@ -13,7 +13,7 @@ export default class ProfileFacebookScreen extends Component {
         const userData = user.facebook;
         const fbButton = (
             <LoginButton
-                readPermissions={['public_profile']}
+                readPermissions={['public_profile', 'email']}
                 onLoginFinished={
                     (error, result) => {
                         if (error) {
