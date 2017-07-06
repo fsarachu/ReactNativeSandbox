@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, {Component} from "react";
-import {Button, View} from "react-native";
+import {Alert, Button, View} from "react-native";
 import styles from "./styles";
 import UserService from "../../../services/user-service";
 
@@ -12,9 +12,7 @@ export default class MyAccountScreen extends Component {
 
     removeAccount() {
         UserService.remove()
-            .then(() => {
-                this.props.navigation.navigate('Splash');
-            });
+            .catch(e => Alert.alert(e));
     }
 
     render() {
