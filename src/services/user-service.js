@@ -15,14 +15,6 @@ class UserService {
             .then((data) => data ? JSON.parse(data) : null);
     }
 
-    login(name) {
-        return this.save({name});
-    }
-
-    logout() {
-        return AsyncStorage.removeItem(STORAGE_KEY);
-    }
-
 }
 
 export default new UserService();
