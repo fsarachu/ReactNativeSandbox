@@ -22,7 +22,14 @@ export default class LoginScreen extends Component {
         const {navigate} = this.props.navigation;
         let user = {
             local: {
-                name: this.state.username,
+                token: 'SUPERSECRETTOKEN',
+                data: {
+                    name: this.state.username,
+                },
+            },
+            facebook: {
+                token: null,
+                data: null,
             },
         };
 
