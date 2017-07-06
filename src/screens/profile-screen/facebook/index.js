@@ -11,33 +11,36 @@ export default class ProfileFacebookScreen extends Component {
     render() {
         const user = this.props.screenProps.user;
         const userData = user.facebook;
+        const fbButton = (
+            <LoginButton
+                readPermissions={['public_profile']}
+                onLoginFinished={
+                    (error, result) => {
+                        if (error) {
+                            Alert.alert("Login failed with error: " + result.error);
+                        } else if (result.isCancelled) {
+                            Alert.alert("Login was cancelled");
+                        } else {
+                            user.facebook = result;
+                            UserService.save(user);
+                        }
+                    }
+                }
+                onLogoutFinished={() => Alert.alert("User logged out")}/>
+        );
 
         if (!userData) {
             return (
                 <View style={styles.container}>
                     <Text>Facebook profile</Text>
-                    <LoginButton
-                        readPermissions={['public_profile']}
-                        onLoginFinished={
-                            (error, result) => {
-                                if (error) {
-                                    Alert.alert("Login failed with error: " + result.error);
-                                } else if (result.isCancelled) {
-                                    Alert.alert("Login was cancelled");
-                                } else {
-                                    user.facebook = result;
-                                    UserService.save(user);
-                                }
-                            }
-                        }
-                        onLogoutFinished={() => Alert.alert("User logged out")}/>
-
+                    {fbButton}
                 </View>
             );
         } else {
             return (
                 <View style={styles.container}>
                     <Text>Facebook profile</Text>
+                    {fbButton}
                     <JSONTree data={userData}/>
                 </View>
             );
