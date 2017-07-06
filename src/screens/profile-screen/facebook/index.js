@@ -69,6 +69,7 @@ export default class ProfileFacebookScreen extends Component {
     }
 
     getUserData() {
+        // https://stackoverflow.com/questions/37383888/how-to-use-graph-api-with-react-native-fbsdk
         return new Promise((resolve, reject) => {
 
             const responseInfoCallback = (error, result) => {
