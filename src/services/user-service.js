@@ -15,6 +15,9 @@ class UserService {
             .then((data) => data ? JSON.parse(data) : null);
     }
 
+    remove() {
+        return AsyncStorage.removeItem(STORAGE_KEY);
+    }
 }
 
 export default new UserService();
