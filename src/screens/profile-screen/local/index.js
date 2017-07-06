@@ -6,6 +6,9 @@ import {Text, View} from "react-native";
 import styles from "./styles";
 
 export default class ProfileLocalScreen extends Component {
+    static navigationOptions = {
+        tabBarLabel: 'Local Profile',
+    };
 
     constructor(props) {
         super(props);

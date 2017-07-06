@@ -9,6 +9,10 @@ import UserService from "../../../services/user-service";
 
 export default class ProfileFacebookScreen extends Component {
 
+    static navigationOptions = {
+        tabBarLabel: 'Facebook Profile',
+    };
+
     constructor(props) {
         super(props);
         this.state = {
