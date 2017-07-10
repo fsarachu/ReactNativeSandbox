@@ -1,5 +1,5 @@
 import {AsyncStorage} from "react-native";
-import {APP_ASYNC_STORAGE_KEY} from "../variables/variables";
+import {APP_ASYNC_STORAGE_KEY} from "../variables/config";
 
 const STORAGE_KEY = `${APP_ASYNC_STORAGE_KEY}:user`;
 
