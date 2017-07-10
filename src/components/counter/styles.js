@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {COLOR_TEXT_PRIMARY_LIGHT, COLOR_TEXT_SECONDARY_LIGHT, UNIT} from "../../variables/style";
+import {COLOR_TEXT_PRIMARY_LIGHT, COLOR_TEXT_SECONDARY_LIGHT, UNIT} from "../../constants/style";
 
 export default StyleSheet.create({
     container: {
